@@ -6,7 +6,7 @@ RouteRecover AI is a web-based platform designed to help travellers manage unexp
 
 🌐 **Live Demo:** https://route-recover-ai.vercel.app/
 
-## 🚀 Features
+## 🚀 Features.
 
 - **Interactive Dashboard** — View travel information, trip summaries, and available dashboard insights.
 - **Trip Management** — Access and manage trip-related information.

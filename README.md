@@ -1,10 +1,13 @@
+
 # 🚆 RouteRecover AI — AI-Powered Travel Disruption Recovery
 
-**An intelligent travel recovery agent that helps travellers recover from cancelled or delayed flights, trains, and buses.**
+**An intelligent travel recovery agent for cancelled or delayed flights, trains, and buses.**
 
-RouteRecover AI is a hackathon project developed by **Team QuadCoders** at **Srinivas Institute of Technology (SIT)**. It aims to simplify travel disruption management by identifying affected bookings, evaluating alternative travel options, checking user constraints, and generating ranked recovery plans with clear explanations.
+RouteRecover AI is a full-stack project developed by **Team QuadCoders** for the **Nexus SIT Hackathon** under the theme **Open Innovation**.
 
-Instead of manually searching across multiple travel platforms, travellers can use a unified workspace to explore feasible alternatives and make informed recovery decisions.
+The project helps travellers manage unexpected travel disruptions by identifying affected bookings, evaluating alternative journeys, checking travel constraints, and generating ranked recovery plans with clear explanations.
+
+Instead of manually searching across multiple platforms, travellers can explore recovery options through one unified interface and make informed decisions.
 
 ---
 
@@ -18,36 +21,39 @@ Instead of manually searching across multiple travel platforms, travellers can u
 | Team Name | QuadCoders |
 | Team Leader | Abhishek |
 | Institution | Srinivas Institute of Technology (SIT) |
-| Project Category | AI / Full-Stack Web Development |
-| Project Type | Travel Disruption Recovery Agent |
+| Project Domain | Artificial Intelligence & Full-Stack Development |
 
-**Built for the Nexus SIT Hackathon:** RouteRecover AI demonstrates how deterministic decision-making, AI-assisted explanations, and full-stack web development can be combined to address real-world travel disruption challenges.
+**Built for the Nexus SIT Hackathon**, RouteRecover AI demonstrates how artificial intelligence, deterministic decision-making, and full-stack web development can address real-world travel disruption challenges.
 
-## 👥 Team Members & Responsibilities
+---
 
-| Team Member | Role |
-|---|---|
-| **Abhishek** | Team Leader — Frontend Design & Backend Integration |
-| **Rishitha R** | Backend Development & API Design |
-| **Ajaya Raj A.N** | AI Decision Engine & Recovery Logic |
-| **Ritu R Suvarna** | Testing & Quality Assurance |
+## 👥 Team Members
 
-Each member has one defined primary role within the project team.
+- **Abhishek** — Team Leader
+- **Rishitha R**
+- **Ajaya Raj A.N**
+- **Ritu R Suvarna**
+
+---
 
 ## 🎯 Problem Statement
 
-Travel disruptions such as cancelled or delayed flights, trains, and buses can cause missed connections, hotel check-in problems, additional expenses, and missed deadlines.
+When a flight, train, or bus is cancelled or delayed, travellers must manually search for alternatives while protecting hotel check-ins, onward connections, arrival deadlines, and budgets.
 
-Travellers often need to search multiple platforms manually to find suitable alternatives. Existing approaches may not consider the complete impact of a disruption across connected bookings or the traveller's personal constraints.
+Existing travel platforms often operate separately, making it difficult to understand how one disruption affects an entire itinerary.
 
-RouteRecover AI addresses this problem by providing a unified system that evaluates travel alternatives against factors such as:
+RouteRecover AI addresses this challenge by providing a unified system that evaluates alternative journeys against traveller-specific requirements.
 
-- Arrival deadlines
-- Additional budget limits
-- Number of stops and connections
-- Overnight travel requirements
-- Accessibility needs
-- Hotel and onward-journey dependencies
+### Key Challenges
+
+- Fragmented travel information across different platforms.
+- Missed connections and affected hotel bookings.
+- Unexpected travel expenses.
+- Strict arrival deadlines and budget constraints.
+- Accessibility requirements and overnight travel restrictions.
+- Lack of transparent explanations for recommended alternatives.
+
+---
 
 ## 💡 Proposed Solution
 
@@ -56,60 +62,68 @@ RouteRecover AI provides an intelligent recovery workflow that:
 1. Detects or simulates a travel disruption.
 2. Identifies affected bookings and connected travel dependencies.
 3. Generates alternative travel options.
-4. Filters alternatives that violate mandatory constraints.
-5. Scores feasible options according to cost, arrival time, and duration.
+4. Filters options that violate mandatory constraints.
+5. Scores feasible alternatives based on cost, arrival time, and journey duration.
 6. Uses an AI assistant to explain recommendations and rejected alternatives.
-7. Presents the recovery plan for the traveller to review and approve.
+7. Presents a recovery plan for the traveller to review and approve.
 
-**Important:** The decision engine determines feasibility and ranking. The AI assistant explains the results rather than independently inventing travel availability or prices.
+The deterministic decision engine handles feasibility checks and ranking, while the AI service provides natural-language explanations.
+
+---
 
 ## ✨ Key Features
 
 - **Disruption Center:** Simulate and manage travel disruption scenarios.
-- **Recovery Workspace:** View ranked recovery options and reasons for rejecting alternatives.
-- **Booking Impact Analysis:** Understand how a disrupted journey affects connected bookings.
-- **Constraint Management:** Set arrival deadlines, budget limits, stop limits, overnight restrictions, and accessibility preferences.
-- **Intelligent Decision Engine:** Apply hard constraints and weighted scoring to identify suitable options.
-- **AI Travel Assistant:** Get natural-language explanations and assistance with recovery decisions.
-- **Dashboard:** Access a unified overview of trips and recovery activity.
-- **Recovery History:** Review previous recovery decisions and their outcomes.
-- **Audit Trail:** Support transparent, explainable decision-making.
-- **Human Approval:** Allow travellers to review and approve a proposed recovery plan.
+- **Recovery Workspace:** View ranked alternatives and rejection reasons.
+- **Booking Impact Analysis:** Identify affected bookings and itinerary dependencies.
+- **Constraint Management:** Configure budgets, arrival deadlines, stop limits, overnight restrictions, and accessibility requirements.
+- **Intelligent Decision Engine:** Apply mandatory constraints and weighted scoring.
+- **AI Travel Assistant:** Help users understand recovery recommendations.
+- **Dashboard:** Access a unified overview of travel and recovery activity.
+- **Recovery History:** Review previous recovery decisions.
+- **Audit Trail:** Support transparent decision-making.
+- **Human Approval:** Allow travellers to review and approve proposed recovery plans.
+
+---
 
 ## 🏗️ System Architecture
 
 ```text
-Traveller
-    |
-    v
-React Frontend
-    |
-    v
-FastAPI Backend
-    |
-    +----------------------+
-    |                      |
-    v                      v
-Decision Engine        AI Service
-    |                      |
-    v                      v
-Constraint Filtering   LLM-Based Explanations
-    |                      |
-    +-----------+----------+
-                |
-                v
-          Database Layer
-                |
-                v
-      Recovery Options & Results
-                |
-                v
-       Traveller Review/Approval
+              TRAVELLER
+                  |
+                  v
+           REACT FRONTEND
+                  |
+                  v
+           FASTAPI BACKEND
+                  |
+          +-------+-------+
+          |               |
+          v               v
+    DECISION ENGINE    AI SERVICE
+          |               |
+          v               v
+    Impact Analysis   AI Explanations
+    Constraint Check  LLM / Fallback
+    Candidate Scoring
+          |               |
+          +-------+-------+
+                  |
+                  v
+              DATABASE
+                  |
+                  v
+       RECOVERY OPTIONS & RESULTS
+                  |
+                  v
+         TRAVELLER APPROVAL
 ```
 
-### Technology Stack
+---
 
-**Frontend**
+## 🛠️ Technology Stack
+
+### Frontend
 - React 18
 - TypeScript
 - Vite
@@ -120,40 +134,54 @@ Constraint Filtering   LLM-Based Explanations
 - Leaflet Maps
 - Axios
 
-**Backend**
+### Backend
 - Python
 - FastAPI
 - Uvicorn
 - Pydantic
 - SQLAlchemy
 
-**Database**
-- SQLite for local development
+### Database
+- SQLite
 - PostgreSQL support through database configuration
 
-**AI & Decision Making**
+### AI & Decision Making
 - Deterministic decision engine
 - Booking-dependency impact analysis
-- Constraint-based filtering and weighted scoring
-- Pluggable OpenAI or Anthropic Claude integration, with offline fallback support
+- Constraint-based filtering
+- Weighted scoring algorithm
+- OpenAI or Anthropic Claude integration with offline fallback support
 
-**Development & Deployment**
+### Development & Deployment
 - Git and GitHub
-- Vercel for frontend deployment
-- Environment-based backend configuration
+- Vercel
+- Environment-based configuration
+
+---
 
 ## ⚙️ How the Decision Engine Works
 
-RouteRecover AI uses a structured decision pipeline:
+RouteRecover AI follows a structured decision-making pipeline.
 
 1. **Impact Analysis:** Identify bookings affected by a disruption.
-2. **Candidate Search:** Generate alternative recovery options.
-3. **Hard-Constraint Filtering:** Reject options that violate mandatory requirements.
-4. **Weighted Scoring:** Compare feasible options using cost, arrival time, and journey duration.
-5. **AI Explanation:** Explain the results and the reasons behind rejected options.
-6. **Human Approval:** Present the proposed recovery plan for traveller approval.
+2. **Candidate Search:** Generate alternative travel options.
+3. **Constraint Filtering:** Reject options that violate mandatory requirements.
+4. **Weighted Scoring:** Rank feasible alternatives using configured criteria.
+5. **AI Explanation:** Explain recommendations and rejected alternatives.
+6. **Human Approval:** Allow the traveller to review and approve the proposed plan.
 
-The scoring model prioritizes cost (40%), arrival time (30%), and journey duration (20%), with additional consideration for stops and preferred transport options. The implementation's configured weights and scoring rules determine the final ranking.
+### Example Scoring Priorities
+
+| Criterion | Weight |
+|---|---:|
+| Cost | 40% |
+| Arrival Time | 30% |
+| Journey Duration | 20% |
+| Stops and Preferences | 10% |
+
+Mandatory constraints are applied before feasible alternatives are ranked.
+
+---
 
 ## 🚀 Getting Started
 
@@ -170,7 +198,7 @@ git clone https://github.com/abhisheksuvarna782-coder/ROUTE_RECOVER_AI.git
 cd ROUTE_RECOVER_AI
 ```
 
-### 2. Configure the Backend
+### 2. Set Up the Backend
 
 ```bash
 cd backend
@@ -191,87 +219,101 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-Install the backend dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Configure the required environment variables using the root `.env.example` as a reference. Set the database URL and any required AI provider credentials according to the project configuration.
+Configure the required environment variables using the project's environment example files, including database settings and any required AI provider credentials.
 
-Start the backend server:
+Start the backend:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-The API documentation is available at:
+Backend API documentation:
 
-`http://127.0.0.1:8000/docs`
+http://127.0.0.1:8000/docs
 
-### 3. Configure the Frontend
+### 3. Set Up the Frontend
 
-Open a new terminal:
+Open another terminal:
 
 ```bash
 cd frontend
 npm install
 ```
 
-Create a frontend `.env` file using `frontend/.env.example` as a reference and configure the backend API URL.
+Configure the frontend environment file with the appropriate backend API URL.
 
-Start the development server:
+Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-Open the local URL displayed in the terminal to access the application.
+Open the local development URL displayed in the terminal.
 
-**Note:** Some functionality may require valid database configuration, backend availability, and AI provider credentials. Follow the repository's deployment documentation for production setup.
+**Note:** Adjust the commands to match the actual directory structure and configuration of the repository.
+
+---
 
 ## 🌐 Project Links
 
 - **GitHub Repository:** [RouteRecover AI](https://github.com/abhisheksuvarna782-coder/ROUTE_RECOVER_AI)
-- **Live Deployment:** [route-recover-ai.vercel.app](https://route-recover-ai.vercel.app)
-- **Deployment Guide:** [`docs/deployment.md`](docs/deployment.md)
+- **Live Deployment:** [RouteRecover AI on Vercel](https://route-recover-ai.vercel.app)
+
+---
 
 ## 🧪 Prototype Status
 
-RouteRecover AI includes a working web application prototype with a disruption recovery workflow. The hackathon demonstration uses simulated disruption scenarios and booking changes to showcase the system's capabilities.
+RouteRecover AI includes a working web application prototype demonstrating travel disruption recovery workflows.
 
-Travel alternatives and prices displayed in simulated scenarios should not be interpreted as live, externally verified booking availability.
+The hackathon demonstration uses simulated disruption scenarios and booking changes to showcase the decision engine, constraint filtering, alternative ranking, and recovery explanations.
+
+Live external booking availability and real-time transport prices should not be assumed unless the relevant integrations are configured.
+
+---
 
 ## 🔮 Future Enhancements
 
 - Integration with live airline, railway, and bus availability APIs.
-- Automated notifications for significant travel disruptions.
-- Real-time hotel and onward-journey rebooking integrations.
-- Improved dependency analysis for complex multi-booking itineraries.
-- Multilingual assistance for travellers.
-- More comprehensive accessibility-aware route recommendations.
-- Production-grade authentication, monitoring, and audit capabilities.
-
-## 🌟 What Makes RouteRecover AI Different?
-
-Unlike a general-purpose chatbot that may suggest alternatives without verifying constraints, RouteRecover AI combines a deterministic decision engine with AI-assisted explanations.
-
-Its key strengths are:
-
-- **Explainability:** Understand why an option was selected or rejected.
-- **Constraint awareness:** Filter alternatives against traveller requirements.
-- **Connected-booking analysis:** Evaluate the impact of disruptions across an itinerary.
-- **Human control:** Keep the final recovery decision with the traveller.
-- **Unified experience:** Bring disruption analysis, alternatives, and recovery history into one workspace.
-
-## 🙌 Acknowledgements
-
-Developed by **Team QuadCoders** for the **Nexus SIT Hackathon**, representing Srinivas Institute of Technology.
-
-This project reflects our team's effort to explore practical applications of artificial intelligence, explainable decision-making, and full-stack software development.
+- Automated travel disruption notifications.
+- Hotel and onward-journey rebooking integrations.
+- Advanced dependency analysis for complex itineraries.
+- Multilingual AI travel assistance.
+- Improved accessibility-aware recommendations.
+- Production-grade authentication and monitoring.
+- Enhanced audit logs and recovery analytics.
 
 ---
 
+## 🌟 What Makes RouteRecover AI Different?
+
+Unlike a general-purpose chatbot that may recommend alternatives without checking constraints, RouteRecover AI combines deterministic decision-making with AI-assisted explanations.
+
+- **Explainability:** Understand why an alternative was selected or rejected.
+- **Constraint Awareness:** Evaluate options against traveller requirements.
+- **Connected-Booking Analysis:** Assess disruption impacts across an itinerary.
+- **Human Control:** Keep the final recovery decision with the traveller.
+- **Unified Experience:** Bring disruption analysis, alternatives, and recovery history into one interface.
+
+---
+
+## 🙌 Acknowledgements
+
+Developed by **Team QuadCoders** for the **Nexus SIT Hackathon**, representing **Srinivas Institute of Technology (SIT)**.
+
+We aim to explore practical applications of artificial intelligence, explainable decision-making, and full-stack software development to make travel disruption recovery more transparent and efficient.
+
+---
+
+<div align="center">
+
 **Built with purpose by Team QuadCoders 💙**
 
-*RouteRecover AI — Recover your journey. Make informed decisions.*
+*RouteRecover AI — Recover Your Journey. Make Informed Decisions.*
+
+</div>
